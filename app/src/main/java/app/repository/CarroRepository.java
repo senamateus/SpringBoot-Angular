@@ -9,6 +9,7 @@ import app.entity.Marca;
 
 public interface CarroRepository extends JpaRepository<Carro, Long>{
 	
+	//BUSCANDO CARROS PELO NOME OU MARCA
 	public List<Carro> findByNome(String nome);
 	public List<Carro> findByMarca(Marca marca);
 	

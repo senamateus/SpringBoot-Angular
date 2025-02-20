@@ -29,11 +29,15 @@ public class Carro {
 	private long id;
 	private String nome;
 	private int ano;
+	private String modelo;
 	
+	
+	//LIGAÇÃO COM MARCA NO BD. um carro só pode ter uma marca e uma marca pode ter vários carros
 	@ManyToOne (cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("carros")
 	private Marca marca;
 	
+	//LIGAÇÃO COM PROPRIETÁRIO NO BD, um carro pode ter vários proprietários e um proprietário pode ter vários carros
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="carro_proprietario")
 	private List<Proprietario> proprietarios;
